@@ -1,0 +1,29 @@
+{
+  "name": "bsckenya_token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/main.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "truffle migrate && npm run stats",
+    "stats": "truffle exec ./scripts/getStatistics.js",
+    "balance": "truffle exec ./scripts/getAccountBalance.js",
+    "supply": "truffle exec ./scripts/getTotalSupply"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liltrendi/bsckenya_token.git"
+  },
+  "author": "Brian Njogu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liltrendi/bsckenya_token/issues"
+  },
+  "homepage": "https://github.com/liltrendi/bsckenya_token#readme"
+}

@@ -408,7 +408,7 @@ contract Kenya is Context, IERC20, Ownable {
     uint256 private _tFeeTotal;
 
     string private _name = 'Kenya';
-    string private _symbol = 'KENYA';
+    string private _symbol = '$KENYA';
     uint8 private _decimals = 9;
 
     constructor () public {
