@@ -1,24 +1,24 @@
-const BSCKenya_Token = artifacts.require("BSCKenya_Token")
+const Kenya = artifacts.require("Kenya")
 const FarmToken = artifacts.require("FarmToken")
 
 module.exports = async function (callback) {
   const accounts = await new web3.eth.getAccounts()
-  const bscKenyaToken = await BSCKenya_Token.deployed()
+  const kenya = await Kenya.deployed()
   const farmToken = await FarmToken.deployed()
 
   const withdrawalAmount = "100";
 
-  // Verify accounts[0] and farmToken balance of BSCKenya_Token before and after the transfer
-  balanceOfBscKenyaTokenBeforeAccounts0 = await bscKenyaToken.balanceOf(accounts[0])
-  balanceOfBscKenyaTokenBeforeFarmToken = await bscKenyaToken.balanceOf(farmToken.address)
-  console.log("*** BSCKenya_Token ***")
+  // Verify accounts[0] and farmToken balance of Kenya before and after the transfer
+  balanceOfKenyaBeforeAccounts0 = await kenya.balanceOf(accounts[0])
+  balanceOfKenyaBeforeFarmToken = await kenya.balanceOf(farmToken.address)
+  console.log("*** Kenya ***")
   console.log(
-    "Balance BscKenya_Token Before accounts[0] " +
-      web3.utils.fromWei(balanceOfBscKenyaTokenBeforeAccounts0.toString())
+    "Balance Kenya Before accounts[0] " +
+      web3.utils.fromWei(balanceOfKenyaBeforeAccounts0.toString())
   )
   console.log(
-    "Balance BscKenya_Token Before TokenFarm " +
-      web3.utils.fromWei(balanceOfBscKenyaTokenBeforeFarmToken.toString())
+    "Balance Kenya Before TokenFarm " +
+      web3.utils.fromWei(balanceOfKenyaBeforeFarmToken.toString())
   )
 
   console.log("*** Farm Token ***")
@@ -42,16 +42,16 @@ module.exports = async function (callback) {
   console.log("Call Withdraw Function")
   await farmToken.withdraw(web3.utils.toWei(withdrawalAmount, "ether"))
 
-  console.log("*** BSCKenya_Token ***")
-  balanceOfBscKenyaTokenAfterAccounts0 = await bscKenyaToken.balanceOf(accounts[0])
-  balanceOfBscKenyaTokenAfterFarmToken = await bscKenyaToken.balanceOf(farmToken.address)
+  console.log("*** Kenya ***")
+  balanceOfKenyaAfterAccounts0 = await kenya.balanceOf(accounts[0])
+  balanceOfKenyaAfterFarmToken = await kenya.balanceOf(farmToken.address)
   console.log(
-    "Balance BscKenya_Token After accounts[0] " +
-      web3.utils.fromWei(balanceOfBscKenyaTokenAfterAccounts0.toString())
+    "Balance Kenya After accounts[0] " +
+      web3.utils.fromWei(balanceOfKenyaAfterAccounts0.toString())
   )
   console.log(
-    "Balance BscKenya_Token After TokenFarm " +
-      web3.utils.fromWei(balanceOfBscKenyaTokenAfterFarmToken.toString())
+    "Balance Kenya After TokenFarm " +
+      web3.utils.fromWei(balanceOfKenyaAfterFarmToken.toString())
   )
 
   console.log("*** Farm Token ***")

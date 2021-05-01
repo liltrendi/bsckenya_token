@@ -1,10 +1,6 @@
-const BSCKenya_Token = artifacts.require("BSCKenya_Token")
-const FarmToken = artifacts.require("FarmToken")
+const Kenya = artifacts.require("Kenya")
 
 module.exports = async function (deployer, network, accounts) {
-  await deployer.deploy(BSCKenya_Token)
-  const bscKenyaToken = await BSCKenya_Token.deployed()
-
-  await deployer.deploy(FarmToken, bscKenyaToken.address)
-  const farmToken = await FarmToken.deployed()
+  await deployer.deploy(Kenya)
+  const kenya = await Kenya.deployed()
 }
